@@ -11,7 +11,9 @@
 upgrade_sota_church = {
 	picture = GFX_upgrade_icon_crates
 
-	potential = { religion_group = christian }
+	potential = { 
+		religion_group = christian
+		}
 	allow = {
 		trigger_if = {
 			limit = { NOT = { religion_group = christian } }
@@ -24,12 +26,71 @@ upgrade_sota_church = {
 		contemplative
 		is_singular
 		holy
-		
 	}
 	build_time = 24
 	gold_cost_flat = 450
 	gold_cost_ticking = 1
 	owner_modifier = {
 		town_opinion = 5
+		monthly_character_prestige = 0.05
+		monthly_character_piety = 0.05
+	}
+}
+
+upgrade_sota_mosque = {
+	picture = GFX_upgrade_icon_crates
+
+	potential = {
+		religion_group = muslim
+		}
+	allow = {
+		trigger_if = {
+			limit = { NOT = { religion_group = muslim } }
+			religion_group = muslim
+		}
+	}
+	active = { religion_group = muslim }
+
+	flags = {
+		contemplative
+		is_singular
+		holy
+	}
+	build_time = 24
+	gold_cost_flat = 450
+	gold_cost_ticking = 1
+	owner_modifier = {
+		town_opinion = 5
+		monthly_character_prestige = 0.05
+		monthly_character_piety = 0.05
+	}
+}
+
+upgrade_sota_parthenon = {
+	picture = GFX_upgrade_icon_crates
+
+	potential = {
+		religion_group = pagan
+		}
+	allow = {
+		trigger_if = {
+			limit = { NOT = { religion_group = pagan } }
+			religion_group = pagan
+		}
+	}
+	active = { religion_group = pagan }
+
+	flags = {
+		contemplative
+		is_singular
+		holy
+	}
+	build_time = 24
+	gold_cost_flat = 450
+	gold_cost_ticking = 1
+	owner_modifier = {
+		same_religion_opinion = 15
+		monthly_character_prestige = 0.2
+		monthly_character_piety = 0.2
 	}
 }

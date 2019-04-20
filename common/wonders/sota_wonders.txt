@@ -27,11 +27,17 @@ wonder_sota_acropolis = {
 		upgrade_sota_church
 		upgrade_sota_mosque
 		upgrade_sota_parthenon
+		upgrade_sota_propylaea
+		upgrade_sota_athena_nike
+		upgrade_sota_erechtheion
+		upgrade_sota_athena_statue
+		upgrade_stoa_theatre
+		upgrade_stoa_sanctuary_zeus
 
 		# OTHER:
 		upgrade_roads
-		upgrade_sota_retinue
-		upgrade_road_tolls
+		upgrade_eternal_flame
+		upgrade_statues_dead
 	}
 	stage = {
 		allow = {
