@@ -1,0 +1,35 @@
+####################################################################################
+##################### Shadow of the Acropolis - Wonder Upgrades ####################
+####################################################################################
+
+# Written by: AdvLeon #
+
+########################
+## Acropolis Upgrades ##
+########################
+
+upgrade_sota_church = {
+	picture = GFX_upgrade_icon_crates
+
+	potential = { religion_group = christian }
+	allow = {
+		trigger_if = {
+			limit = { NOT = { religion_group = christian } }
+			religion_group = christian
+		}
+	}
+	active = { religion_group = christian }
+
+	flags = {
+		contemplative
+		is_singular
+		holy
+		
+	}
+	build_time = 24
+	gold_cost_flat = 450
+	gold_cost_ticking = 1
+	owner_modifier = {
+		town_opinion = 5
+	}
+}
