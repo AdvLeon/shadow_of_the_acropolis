@@ -9,7 +9,7 @@
 #########################
 
 wonder_sota_acropolis = {
-	picture = GFX_wonder_strip_mausoleum
+	picture = GFX_wonder_strip_acropolis
 	allow_construction = no
 	potential = {
 	}
@@ -36,7 +36,6 @@ wonder_sota_acropolis = {
 
 		# OTHER:
 		upgrade_roads
-		upgrade_eternal_flame
 		upgrade_statues_dead
 	}
 	stage = {
