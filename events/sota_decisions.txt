@@ -1,0 +1,47 @@
+#################################################
+#											    #
+#      Decisions - Shadow of the Acropolis  	#
+#											    #
+#################################################
+#        Written by AdvLeon & Spykadelic		#
+#################################################
+
+
+decisions = {
+
+	sota_restore_games = {		# Restore the Panhellenic games, only for Reform Hellenic Greeks with the requisite provinces.
+
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+	
+		potential = {
+			is_playable = yes
+			religion = hellenic_pagan_reformed
+			culture = greek
+		}
+
+		allow = {
+			piety = 800
+			prestige = 1000
+			AND = {
+				OR = {
+					owns = 476
+					any_realm_lord = { owns = 476 }		# Achaia / Olympic Games
+				}
+				OR = {
+					owns = 481
+					any_realm_lord = { owns = 481 }		# Korinthos / Isthmian Games & Nemean Games
+				}
+				OR = {
+					owns = 475
+					any_realm_lord = { owns = 475 }		# Thebes / Pythian Games
+				}
+			}
+		}
+
+		effect = {
+			narrative_event = { id = sota_olympics.1 days = 2 }
+		}
+	}
+}

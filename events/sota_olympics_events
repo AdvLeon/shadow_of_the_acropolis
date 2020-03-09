@@ -1,0 +1,23 @@
+#################################################
+#	 										    #
+#  Panhellenic Games - Shadow of the Acropolis  #
+#											    #
+#################################################
+#        Written by AdvLeon & Spykadelic		#
+#################################################
+
+
+namespace = sota_olympics
+
+# Initial Olympics event from decision #
+narrative_event = {
+	id = "sota_olympics.1"
+	desc = "sota_olympics.desc.1"
+	title = "sota_olympics.title.1"
+
+	picture = GFX_evt_ruler_listening_to_supplicant
+	border = GFX_event_narrative_frame_economy
+
+	is_triggered_only = yes
+
+	
