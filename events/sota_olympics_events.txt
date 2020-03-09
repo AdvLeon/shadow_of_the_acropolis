@@ -24,41 +24,40 @@ narrative_event = {
 	option = {
 		name = sota_olympics.option.a.1
 		custom_tooltip = { text = sota_olympics.tooltip.a.1 }
-		character_event = { id = sota_olympics.2 }
 		prestige = 500
 		piety = 500
-
+		set_character_flag = sota_games_prep
 	}
 	# Don't bother restoring any games #
 	option = {
-		name = sota_olympics.option.a.2
-		custom_tooltip = { text = sota_olympics.tooltip.a.2 }
+		name = sota_olympics.option.b.1
+		custom_tooltip = { text = sota_olympics.tooltip.b.1 }
 		clr_global_flag = sota_games_restored
 	}
 }
 
-# Scholar asks about the other games #
+# Begin Preparations #
 character_event = {
 	id = "sota_olympics.2"
 	desc = "sota_olympics.desc.2"
 
 	picture = GFX_evt_ruler_listening_to_supplicant
-	border = GFX_event_narrative_frame_economy
+	border = GFX_event_character_frame_economy
 
-	is_triggered_only = yes
+	has_character_flag = sota_games_prep
 
-	# Take advice and restore the 3 other games as well #
+	trigger = {
+		AND = {			
+			month = 4
+			NOT = { month = 5 }
+		}
+	}
+
 	option = {
 		name = sota_olympics.option.a.2
 		custom_tooltip = { text = sota_olympics.tooltip.a.2 }
-		narrative_event = { id = sota_olympics.3 }
-		set_global_flag = sota_all_games_restored
-	}
-	# Ignore advice and go on with only the Olympic games #
-	option = {
-		name = sota_olympics.option.b.2
-		custom_tooltip = { text = sota_olympics.tooltip.b.2 }
-		narrative_event = { id = sota_olympics.3 }
+		narrative_event = { id = sota_olympics.3 days = 60 }
+		clr_character_flag = sota_games_prep
 	}
 }
 
@@ -73,13 +72,48 @@ narrative_event = {
 
 	is_triggered_only = yes
 
-	# Let the games begin! (Only Olympics)
+	# Begin construction and preparation
 	option = {
 		name = sota_olympics.option.a.3
 		custom_tooltip = { text = sota_olympics.tooltip.a.3 }
+		narrative_event = { id = sota_olympics.4 days = 365 }
 	}
-	# Let the games begin! (All games)
+}
+
+# The Olympic Games are Starting #
+narrative_event = {
+	id = "sota_olympics.4"
+	desc = "sota_olympics.desc.4"
+	title = "sota_olympics.title.4"
+
+	picture = GFX_evt_ruler_listening_to_supplicant
+	border = GFX_event_narrative_frame_economy
+
+	is_triggered_only = yes
+
 	option = {
-		name = sota_olympics.option.b.3
-		custom_tooltip = { text = sota_olympics.tooltip.b.3 }
+		name = sota_olympics.option.a.4
+		custom_tooltip = { text = sota_olympics.tooltip.a.4 }
+		narrative_event = { id = sota_olympics.4 months = 48 }
+		narrative_event = { id = sota_olympics.5 days = 7 }
 	}
+}
+
+# The first event #
+narrative_event = {
+	id = "sota_olympics.5"
+	desc = "sota_olympics.desc.5"
+	title = "sota_olympics.title.5"
+
+	picture = GFX_evt_ruler_listening_to_supplicant
+	border = GFX_event_narrative_frame_economy
+
+	is_triggered_only = yes
+
+	option = {
+		name = sota_olympics.option.a.5
+		custom_tooltip = { text = sota_olympics.tooltip.a.5 }
+		narrative_event = { id = sota_olympics.6 days = 7 }
+	}
+}
+
