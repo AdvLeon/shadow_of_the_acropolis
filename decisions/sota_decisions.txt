@@ -1,15 +1,15 @@
-#############################################
-#											#
-#    Decisions - Shadow of the Acropolis  	#
-#											#
-#############################################
-#      Written by AdvLeon & Spykadelic		#
-#############################################
+#################################################
+#											    #
+#      Decisions - Shadow of the Acropolis  	#
+#											    #
+#################################################
+#        Written by AdvLeon & Spykadelic		#
+#################################################
 
 
 decisions = {
 
-	sota_restore_games = {		# Restore the Panhellenic games, only for Reform Hellenic Greeks with the requisite provinces.
+	sota_restore_games = {		# Restore the Panhellenic games, only for Reformed Hellenic Greeks with the requisite provinces.
 
 		only_playable = yes
 		is_high_prio = yes
@@ -19,9 +19,12 @@ decisions = {
 			is_playable = yes
 			religion = hellenic_pagan_reformed
 			culture = greek
+			NOT = { has_global_flag = sota_games_restored }
 		}
 
 		allow = {
+			religion = hellenic_pagan_reformed
+			culture = greek
 			piety = 800
 			prestige = 1000
 			AND = {
@@ -41,7 +44,8 @@ decisions = {
 		}
 
 		effect = {
-			character_event = { id = sota_olympics.1 days = 2 }
+			narrative_event = { id = sota_olympics.1 }
+			set_global_flag = sota_games_restored
 		}
 	}
 }

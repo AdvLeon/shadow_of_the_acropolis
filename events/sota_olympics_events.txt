@@ -20,4 +20,66 @@ narrative_event = {
 
 	is_triggered_only = yes
 
-	
+	# Restore the Olympic Games every 4 years, announcement to follow #
+	option = {
+		name = sota_olympics.option.a.1
+		custom_tooltip = { text = sota_olympics.tooltip.a.1 }
+		character_event = { id = sota_olympics.2 }
+		prestige = 500
+		piety = 500
+
+	}
+	# Don't bother restoring any games #
+	option = {
+		name = sota_olympics.option.a.2
+		custom_tooltip = { text = sota_olympics.tooltip.a.2 }
+		clr_global_flag = sota_games_restored
+	}
+}
+
+# Scholar asks about the other games #
+character_event = {
+	id = "sota_olympics.2"
+	desc = "sota_olympics.desc.2"
+
+	picture = GFX_evt_ruler_listening_to_supplicant
+	border = GFX_event_narrative_frame_economy
+
+	is_triggered_only = yes
+
+	# Take advice and restore the 3 other games as well #
+	option = {
+		name = sota_olympics.option.a.2
+		custom_tooltip = { text = sota_olympics.tooltip.a.2 }
+		narrative_event = { id = sota_olympics.3 }
+		set_global_flag = sota_all_games_restored
+	}
+	# Ignore advice and go on with only the Olympic games #
+	option = {
+		name = sota_olympics.option.b.2
+		custom_tooltip = { text = sota_olympics.tooltip.b.2 }
+		narrative_event = { id = sota_olympics.3 }
+	}
+}
+
+# Panhellenic Games Announcement #
+narrative_event = {
+	id = "sota_olympics.3"
+	desc = "sota_olympics.desc.3"
+	title = "sota_olympics.title.3"
+
+	picture = GFX_evt_ruler_listening_to_supplicant
+	border = GFX_event_narrative_frame_economy
+
+	is_triggered_only = yes
+
+	# Let the games begin! (Only Olympics)
+	option = {
+		name = sota_olympics.option.a.3
+		custom_tooltip = { text = sota_olympics.tooltip.a.3 }
+	}
+	# Let the games begin! (All games)
+	option = {
+		name = sota_olympics.option.b.3
+		custom_tooltip = { text = sota_olympics.tooltip.b.3 }
+	}
